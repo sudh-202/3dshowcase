@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 3D Shoe Showcase
+
+A modern, interactive 3D shoe viewer built with Next.js, Three.js, and React Three Fiber. This application allows users to view a 3D shoe model from different angles, customize its color, and provides a sleek, modern UI with glassmorphism effects.
+
+## Features
+
+- Interactive 3D shoe model with orbit controls
+- Color customization with real-time updates
+- Responsive design that works on desktop and mobile
+- Modern UI with glassmorphism effects
+- Dark mode design with cinematic lighting
+
+## Tech Stack
+
+- **Frontend Framework**: Next.js with React
+- **Styling**: Tailwind CSS
+- **3D Rendering**: Three.js with React Three Fiber
+- **3D Utilities**: @react-three/drei
+- **Animations**: @react-spring/three
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18.17 or later
+- npm or yarn
+
+### Installation
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/yourusername/3d-shoe-showcase.git
+cd 3d-shoe-showcase
+```
+
+2. Install dependencies
+
+```bash
+npm install
+# or
+yarn install
+```
+
+3. Run the development server
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Usage
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Rotate the shoe**: Click and drag with your mouse
+- **Zoom**: Use the scroll wheel
+- **Change color**: Click on the color swatches in the control panel
 
-## Learn More
+## Adding Your Own 3D Model
 
-To learn more about Next.js, take a look at the following resources:
+To replace the placeholder with your own 3D shoe model:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Export your 3D model in glTF format (.glb or .gltf) from your 3D modeling software
+2. Place the model file in the `public` directory
+3. Update the model path in `ShoeModel.tsx`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```tsx
+// Replace this line
+const { nodes, materials } = useGLTF('/nike.glb') as any;
 
-## Deploy on Vercel
+// With your model path
+const { nodes, materials } = useGLTF('/your-model-name.glb') as any;
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. Update the model rendering code to match your model's structure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+
+MIT
+
+## Acknowledgments
+
+- [Three.js](https://threejs.org/)
+- [React Three Fiber](https://docs.pmnd.rs/react-three-fiber/)
+- [Next.js](https://nextjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
